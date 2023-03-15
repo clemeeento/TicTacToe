@@ -1,4 +1,4 @@
-all :  TicTacToe Board.o
+all :  TicTacToe board.o
 
 board.o : board.hpp board.cpp
 	g++ -c board.cpp -lsfml-graphics -lsfml-window -lsfml-system
