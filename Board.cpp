@@ -1,7 +1,7 @@
 #include <iostream>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
-#include "Board.hpp"
+#include "board.hpp"
 
 using namespace std;
 
@@ -57,12 +57,4 @@ void Board::display(){
         // fin de la frame courante, affichage de tout ce qu'on a dessiné
         window.display();
     }
-}
-
-int main()
-{
-    Board D;
-    D.display();
-
-    return 0;
 }
