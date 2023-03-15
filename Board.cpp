@@ -32,7 +32,7 @@ this->vlines[3].position = sf::Vector2f((2*h)/3, h);
 void Board::display(){
     
     // création de la fenêtre
-    sf::RenderWindow window(sf::VideoMode(W, H), "My window");
+    sf::RenderWindow window(sf::VideoMode(W, H), "TicTacToe");
 
     // on fait tourner le programme tant que la fenêtre n'a pas été fermée
     while (window.isOpen())
@@ -49,11 +49,20 @@ void Board::display(){
         // effacement de la fenêtre en noir
         window.clear(sf::Color::Black);
 
-        // c'est ici qu'on dessine tout
+        //on dessine
+        draw(W,H);
         window.draw(hlines);
         window.draw(vlines);
 
         // fin de la frame courante, affichage de tout ce qu'on a dessiné
         window.display();
     }
+}
+
+int main()
+{
+    Board D;
+    D.display();
+
+    return 0;
 }
