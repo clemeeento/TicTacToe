@@ -1,5 +1,7 @@
 #ifndef BOARD_H
 #define BOARD_H
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
 
 class Board{
     private:
