@@ -11,7 +11,7 @@ class Board{
         sf::VertexArray hlines; 
         sf::VertexArray vlines;
     public:
-        Board(); // constructor 
+        Board(); 
         void draw(int w, int h); 
         void display(sf::RenderWindow& window);
 };

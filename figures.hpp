@@ -22,9 +22,9 @@ class Dot
     private:
         sf::CircleShape cercle;
     public:
-    Dot(int radius);
-    void draw(int x, int y);
-    void display(sf::RenderWindow& window, int x, int y);
+        Dot(int radius);
+        void draw(int x, int y);
+        void display(sf::RenderWindow& window, int x, int y);
 };
 
 #endif

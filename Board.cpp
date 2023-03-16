@@ -13,13 +13,11 @@ Board::Board()
 
 void Board::draw (int w , int h)
 {
-    //horizontales
     this->hlines[0].position = sf::Vector2f(0,h/3);
     this->hlines[1].position= sf::Vector2f(w,h/3);
     this->hlines[2].position = sf::Vector2f(0, (2*h)/3);
     this->hlines[3].position = sf::Vector2f(w, (2*h)/3);
 
-    //verticales
     this->vlines[0].position = sf::Vector2f(w/3, 0);
     this->vlines[1].position = sf::Vector2f(w/3, h);
     this->vlines[2].position = sf::Vector2f((2*w)/3, 0);
