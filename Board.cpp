@@ -26,32 +26,9 @@ void Board::draw (int w , int h)
     this->vlines[3].position = sf::Vector2f((2*w)/3, h);
 };
 
-void Board::display(){
-    
-    // création de la fenêtre
-    sf::RenderWindow window(sf::VideoMode(W, H), "TicTacToe");
-
-    // on fait tourner le programme tant que la fenêtre n'a pas été fermée
-    while (window.isOpen())
-    {
-        // on traite tous les évènements de la fenêtre qui ont été générés depuis la dernière itération de la boucle
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            // fermeture de la fenêtre lorsque l'utilisateur le souhaite
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
-
-        // effacement de la fenêtre en noir
-        window.clear(sf::Color::Black);
-
-        //on dessine
-        draw(W,H);
-        window.draw(hlines);
-        window.draw(vlines);
-
-        // fin de la frame courante, affichage de tout ce qu'on a dessiné
-        window.display();
-    }
+void Board::display(sf::RenderWindow& window)
+{
+    draw(W,H);
+    window.draw(hlines);
+    window.draw(vlines);
 }

@@ -13,7 +13,7 @@ class Board{
     public:
         Board(); // constructor 
         void draw(int w, int h); 
-        void display();
+        void display(sf::RenderWindow& window);
 };
 
 #endif

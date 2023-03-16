@@ -10,7 +10,7 @@ class Cross{
         sf::VertexArray blines;
     public:
         Cross();
-        void display(int x, int y);
+        void display(sf::RenderWindow& window,int x, int y);
         void draw(int x, int y); 
 };
 

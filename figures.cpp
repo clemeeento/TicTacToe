@@ -20,9 +20,8 @@ void Cross::draw(int x,int y)
     this->blines[1].position = sf::Vector2f(x+0.3*(W/3),y+0.3*(H/3));
 }
 
-void Cross::display(int x,int y)
+void Cross::display(sf::RenderWindow& window,int x,int y)
 {
-    sf::RenderWindow window(sf::VideoMode(W, H), "TicTacToe");
     draw(x,y);
     window.draw(hlines);
     window.draw(blines);
