@@ -28,3 +28,19 @@ void Cross::display(sf::RenderWindow& window,int x,int y)
 
     window.display();
 }
+
+Dot::Dot(int radius)
+{
+    this->cercle = sf::CircleShape (radius);
+}
+
+void Dot::draw(int x, int y)
+{
+    cercle.setPosition(x,y);
+}
+
+void Dot::display(sf::RenderWindow& window,int x, int y)
+{
+    draw(x-0.9*RADIUS,y-RADIUS);
+    window.draw(cercle);
+}

@@ -4,7 +4,10 @@
 #include <SFML/Graphics.hpp>
 #include "Board.hpp"
 
-class Cross{
+#define RADIUS 60
+
+class Cross
+{
     private:
         sf::VertexArray hlines; 
         sf::VertexArray blines;
@@ -12,6 +15,16 @@ class Cross{
         Cross();
         void display(sf::RenderWindow& window,int x, int y);
         void draw(int x, int y); 
+};
+
+class Dot
+{
+    private:
+        sf::CircleShape cercle;
+    public:
+    Dot(int radius);
+    void draw(int x, int y);
+    void display(sf::RenderWindow& window, int x, int y);
 };
 
 #endif
