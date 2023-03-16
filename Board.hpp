@@ -3,6 +3,9 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 
+#define W 700
+#define H 600
+
 class Board{
     private:
         sf::VertexArray hlines; 

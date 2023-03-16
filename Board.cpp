@@ -5,9 +5,6 @@
 
 using namespace std;
 
-#define W 700
-#define H 600
-
 Board::Board()
 {
     this->hlines = sf::VertexArray (sf::Lines, 4);
