@@ -5,7 +5,7 @@
 
 using namespace std;
 
-#define W 800
+#define W 700
 #define H 600
 
 Board::Board()
@@ -14,19 +14,19 @@ Board::Board()
     this->vlines = sf::VertexArray (sf::Lines, 4);
 }
 
-void Board::draw (int w , int h){
+void Board::draw (int w , int h)
+{
+    //horizontales
+    this->hlines[0].position = sf::Vector2f(0,h/3);
+    this->hlines[1].position= sf::Vector2f(w,h/3);
+    this->hlines[2].position = sf::Vector2f(0, (2*h)/3);
+    this->hlines[3].position = sf::Vector2f(w, (2*h)/3);
 
-//horizontales
-this->hlines[0].position = sf::Vector2f(0,w/3);
-this->hlines[1].position= sf::Vector2f(w,w/3);
-this->hlines[2].position = sf::Vector2f(0, 2*w/3);
-this->hlines[3].position = sf::Vector2f(h, 2*w/3);
-
-        // Ligne verticale de gauche
-this->vlines[0].position = sf::Vector2f(h/3, 0);
-this->vlines[1].position = sf::Vector2f(h/3, h);
-this->vlines[2].position = sf::Vector2f((2*h)/3, 0);
-this->vlines[3].position = sf::Vector2f((2*h)/3, h);
+    //verticales
+    this->vlines[0].position = sf::Vector2f(w/3, 0);
+    this->vlines[1].position = sf::Vector2f(w/3, h);
+    this->vlines[2].position = sf::Vector2f((2*w)/3, 0);
+    this->vlines[3].position = sf::Vector2f((2*w)/3, h);
 };
 
 void Board::display(){
