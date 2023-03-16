@@ -1,5 +1,5 @@
 #include "board.hpp"
-#include "formes.hpp"
+#include "figures.hpp"
 
 int main()
 {

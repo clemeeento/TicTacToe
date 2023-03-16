@@ -9,7 +9,7 @@ Board::Board()
 {
     this->hlines = sf::VertexArray (sf::Lines, 4);
     this->vlines = sf::VertexArray (sf::Lines, 4);
-}
+}   
 
 void Board::draw (int w , int h)
 {
