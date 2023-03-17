@@ -25,8 +25,6 @@ void Cross::display(sf::RenderWindow& window,int x,int y)
     draw(x,y);
     window.draw(hlines);
     window.draw(blines);
-
-    window.display();
 }
 
 Dot::Dot(int radius)

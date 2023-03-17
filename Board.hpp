@@ -6,7 +6,8 @@
 #define W 700
 #define H 600
 
-class Board{
+class Board
+{
     private:
         sf::VertexArray hlines; 
         sf::VertexArray vlines;
