@@ -12,3 +12,19 @@ void Game::actualisationElements(int pos, char nomElement)
     if(nomElement=="Dot") element[pos]=2;
 }
 
+int Game::isValidePostition(int pos)
+{
+    if(element[pos]==0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int partieFinie()
+{
+    
+}

@@ -9,6 +9,8 @@ class Game
         int elements[9]={0,0,0,0,0,0,0,0,0};
     public : 
         void actualisationElements(int pos, char nomElement);
+        int isValidePostition(int pos);
+        int partieFinie();
 };
 
 #endif
