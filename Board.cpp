@@ -34,27 +34,32 @@ void Board::display(sf::RenderWindow& window)
 int *convertMousePosition(int x, int y)
 {
     static int position[2];
+    if(x>W || x<0 || y>H || y<0)
+    {
+        position[1]=0;
+        position[2]=0;
+    }
     //Ligne 1 Colonne 1
-    if(x<W/3 && y<H/3)
+    if(x>0 && x<W/3 && y>0 && y<H/3)
     {
         position[0]=W/6;
         position[1]=H/6;
     }
     //Ligne 1 Colonne 2
-    if(x>W/3 && x<2*W/3 && y<H/3)
+    if(x>W/3 && x<2*W/3 && y>0 && y<H/3)
     {
         position[0]=W/2;
         position[1]=H/6;
     }
     //Ligne 1 Colonne 3
-    if(x>2*W/3 && y<H/3)
+    if(x>2*W/3 && x<W && y>0 && y<H/3)
     {
         position[0]=5*W/6;
         position[1]=H/6;
     }
 
     //Ligne 2 Colonne 1
-    if(x<W/3 && y>H/3 && y<2*H/3)
+    if(x>0 && x<W/3 && y>H/3 && y<2*H/3)
     {
         position[0]=W/6;
         position[1]=H/2;
@@ -66,26 +71,26 @@ int *convertMousePosition(int x, int y)
         position[1]=H/2;
     }
     //Ligne 2 Colonne 3
-    if(x>2*W/3 && y>H/3 && y<2*H/3)
+    if(x>2*W/3 && x<W && y>H/3 && y<2*H/3)
     {
         position[0]=5*W/6;
         position[1]=H/2;
     }
 
     //Ligne 3 Colonne 1
-    if(x<W/3 && y>2*H/3)
+    if(x>0 && x<W/3 && y>2*H/3 && y<H)
     {
         position[0]=W/6;
         position[1]=5*H/6;
     }
     //Ligne 3 Colonne 2
-    if(x>W/3 && x<2*W/3 && y>2*H/3)
+    if(x>W/3 && x<2*W/3 && y>2*H/3 && y<H)
     {
         position[0]=W/2;
         position[1]=5*H/6;
     }
     //Ligne 3 Colonne 3
-    if(x>2*W/3 && y>2*H/3)
+    if(x>2*W/3 && x<W && y>2*H/3 && y<H)
     {
         position[0]=5*W/6;
         position[1]=5*H/6;

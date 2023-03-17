@@ -29,7 +29,7 @@ int main()
             int positionLX = sf::Mouse::getPosition(window).x;
             int positionLY = sf::Mouse::getPosition(window).y;
             int *positionL = convertMousePosition(positionLX,positionLY);
-            C.display(window,positionL[0],positionL[1]);
+            if(positionL[0]!=0) C.display(window,positionL[0],positionL[1]);
         }
 
         if (sf::Mouse::isButtonPressed(sf::Mouse::Right))
@@ -37,7 +37,7 @@ int main()
             int positionRX = sf::Mouse::getPosition(window).x;
             int positionRY = sf::Mouse::getPosition(window).y;
             int *positionR = convertMousePosition(positionRX,positionRY);
-            D.display(window,positionR[0],positionR[1]);
+            if(positionR[0]!=0) D.display(window,positionR[0],positionR[1]);
         }
 
         //window.clear(sf::Color::Black);
