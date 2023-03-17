@@ -14,6 +14,8 @@ class Game
         int isValidePostition(int pos);
         int partieFinie();
         void display(sf::RenderWindow& window);
+        void reset();
+        int rejouer();
 };
 
 #endif
