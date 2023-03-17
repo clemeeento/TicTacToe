@@ -1,12 +1,14 @@
+#include <iostream>
 #include "board.hpp"
 #include "figures.hpp"
 #include "game.hpp"
 
+using namespace std;
+
+
 int main()
 {
     Board B;
-    Cross C;
-    Dot D(RADIUS);
     Game G;
 
     int positionLX;
@@ -54,19 +56,9 @@ int main()
                 }
             }
         }
-        for(int i=0; i<9;i=i+1)
-        {
-            if(G.getElement(i)==1)
-            {
-                C.display(window,i);
-            }
-            if(G.getElement(i)==2)
-            {
-                D.display(window,i);
-            }
-        }
         
         B.display(window) ;
+        G.display(window);
 
         window.display();
         

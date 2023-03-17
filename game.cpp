@@ -1,11 +1,18 @@
 #include <iostream>
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
 #include "game.hpp"
+#include "figures.hpp"
+#
 
 using namespace std;
 
 Game::Game()
 {
-    int element[9]={0,0,0,0,0,0,0,0,0};
+    for(int i=0;i<9;i=i+1)
+    {
+        element[i]=0;
+    }
 }
 
 void Game::actualisationElements(int pos, int elt)
@@ -64,4 +71,22 @@ int Game::partieFinie()
     }
     // If all spaces are filled and no winner, the game is a tie
     return 1;
+}
+
+void Game::display(sf::RenderWindow& window)
+{
+    Cross C;
+    Dot D(RADIUS);
+    for(int i=0; i<9;i=i+1)
+    {
+        cout <<element[i];
+        if(element[i]==1)
+        {
+            C.display(window,i);
+        }
+        if(element[i]==2)
+        {
+            D.display(window,i);
+        }
+    }
 }
