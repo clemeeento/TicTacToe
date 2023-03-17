@@ -7,7 +7,12 @@ int main()
     Cross C;
     Dot D(RADIUS);
 
-    sf::RenderWindow window(sf::VideoMode(700, 600), "TicTacToe");
+    int positionLX;
+    int positionLY;
+    int positionRX;
+    int positionRY;
+
+    sf::RenderWindow window(sf::VideoMode(W,H), "TicTacToe");
 
     while (window.isOpen())
     {
@@ -18,13 +23,26 @@ int main()
                 window.close();
         }
 
-        window.clear(sf::Color::Black);
+        if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+        {
+
+            int positionLX = sf::Mouse::getPosition(window).x;
+            int positionLY = sf::Mouse::getPosition(window).y;
+            int *positionL = convertMousePosition(positionLX,positionLY);
+            C.display(window,positionL[0],positionL[1]);
+        }
+
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Right))
+        {
+            int positionRX = sf::Mouse::getPosition(window).x;
+            int positionRY = sf::Mouse::getPosition(window).y;
+            int *positionR = convertMousePosition(positionRX,positionRY);
+            D.display(window,positionR[0],positionR[1]);
+        }
+
+        //window.clear(sf::Color::Black);
 
         B.display(window) ;
-
-        C.display(window,W/2,H/2);
-
-        D.display(window,5*W/6,H/2);
 
         window.display();
     }

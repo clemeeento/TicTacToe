@@ -16,4 +16,6 @@ class Board{
         void display(sf::RenderWindow& window);
 };
 
+int *convertMousePosition(int x, int y);
+
 #endif
