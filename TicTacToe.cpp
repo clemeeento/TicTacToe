@@ -41,7 +41,6 @@ int main()
                     tour=tour+1;
                 }
             }
-            
         }
         if(tour%2!=0 && sf::Mouse::isButtonPressed(sf::Mouse::Left))
         {
@@ -56,7 +55,6 @@ int main()
                     tour=tour+1;
                 }
             }
-
         }
         
         B.display(window) ;
