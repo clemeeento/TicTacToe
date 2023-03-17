@@ -79,7 +79,6 @@ void Game::display(sf::RenderWindow& window)
     Dot D(RADIUS);
     for(int i=0; i<9;i=i+1)
     {
-        cout <<element[i];
         if(element[i]==1)
         {
             C.display(window,i);
