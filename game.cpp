@@ -41,7 +41,8 @@ int Game::partieFinie()
     {
         if (element[i] != 0 && element[i] == element[i+1] && element[i] == element[i+2]) 
         {
-            return 1;
+            if(element[i]==1) return 1;
+            if(element[i]==2) return 2;
         }
     }
     // Check columns
@@ -49,16 +50,20 @@ int Game::partieFinie()
     {
         if (element[i] != 0 && element[i] == element[i+3] && element[i] == element[i+6]) 
         {
-            return 1;
+            if(element[i]==1) return 1;
+            if(element[i]==2) return 2;
         }
     }
     // Check diagonals
     if (element[0] != 0 && element[0] == element[4] && element[0] == element[8]) 
     {
-        return 1;
+        if(element[0]==1) return 1;
+        if(element[0]==2) return 2;
     }
-    if (element[2] != 0 && element[2] == element[4] && element[2] == element[6]) {
-        return 1;
+    if (element[2] != 0 && element[2] == element[4] && element[2] == element[6]) 
+    {
+        if(element[2]==1) return 1;
+        if(element[2]==2) return 2;
     }
 
     // Check if there are any empty spaces left
@@ -70,7 +75,7 @@ int Game::partieFinie()
         }
     }
     // If all spaces are filled and no winner, the game is a tie
-    return 1;
+    return -1;
 }
 
 void Game::display(sf::RenderWindow& window)
@@ -98,14 +103,15 @@ void Game::reset()
     }
 }
 
-int Game::rejouer()
+int Game::rejouer(int win)
 {
     int rejouer =0;
     
     sf::RenderWindow window(sf::VideoMode(400, 200), "Rejouer ?");
 
     sf::Font font;
-    if (!font.loadFromFile("Lucia.ttf")) {
+    if (!font.loadFromFile("Lucia.ttf")) 
+    {
         std::cerr << "Erreur lors du chargement de la police d'ecriture" << std::endl;
         return rejouer;
     }
@@ -116,11 +122,18 @@ int Game::rejouer()
     text.setFillColor(sf::Color::White);
     text.setPosition(50, 50);
 
-    /*if (player_won) {
-        text.setString("Vous avez gagné !");
-    } else {
-        text.setString("Vous avez perdu !");
-    }*/
+    if (win==1) 
+    {
+        text.setString("victoire des Croix !");
+    } 
+    if(win==2) 
+    {
+        text.setString("Victoire des ronds !");
+    }
+    if(win==-1)
+    {
+        text.setString("Egalite !");
+    }
 
     sf::RectangleShape quit_button(sf::Vector2f(100, 50));
     quit_button.setPosition(50, 100);
@@ -144,18 +157,25 @@ int Game::rejouer()
     replay_text.setString("Rejouer");
     replay_text.setPosition(260, 110);
 
-    while (window.isOpen()) {
+    while (window.isOpen()) 
+    {
         sf::Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed) {
+        while (window.pollEvent(event)) 
+        {
+            if (event.type == sf::Event::Closed) 
+            {
                 window.close();
             }
-            if (event.type == sf::Event::MouseButtonPressed) {
-                if (event.mouseButton.button == sf::Mouse::Left) {
-                    if (quit_button.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+            if (event.type == sf::Event::MouseButtonPressed) 
+            {
+                if (event.mouseButton.button == sf::Mouse::Left) 
+                {
+                    if (quit_button.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) 
+                    {
                         window.close();
                     }
-                    if (replay_button.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                    if (replay_button.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) 
+                    {
                         return 1;
                         window.close();
                     }

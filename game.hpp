@@ -15,7 +15,7 @@ class Game
         int partieFinie();
         void display(sf::RenderWindow& window);
         void reset();
-        int rejouer();
+        int rejouer(int win);
 };
 
 #endif

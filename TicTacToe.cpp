@@ -67,7 +67,7 @@ int main()
             window.display();
         }
         rejouer=0;
-        rejouer = G.rejouer();
+        rejouer = G.rejouer(G.partieFinie());
     }
 
     return 0;
