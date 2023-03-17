@@ -20,8 +20,11 @@ void Cross::draw(int x,int y)
     this->blines[1].position = sf::Vector2f(x+0.3*(W/3),y+0.3*(H/3));
 }
 
-void Cross::display(sf::RenderWindow& window,int x,int y)
+void Cross::display(sf::RenderWindow& window,int i)
 {
+    int x=(W*(1+(i/3)))/6;
+    int y=(H*(1+(i%3)))/6;
+    
     draw(x,y);
     window.draw(hlines);
     window.draw(blines);
@@ -37,8 +40,11 @@ void Dot::draw(int x, int y)
     cercle.setPosition(x,y);
 }
 
-void Dot::display(sf::RenderWindow& window,int x, int y)
-{
+void Dot::display(sf::RenderWindow& window,int i)
+{   
+    int x=(W*(1+(i/3)))/6;
+    int y=(H*(1+(i%3)))/6;
+    
     draw(x-0.9*RADIUS,y-RADIUS);
     window.draw(cercle);
 }

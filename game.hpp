@@ -1,14 +1,14 @@
 #ifndef GAME_H
 #define GAME_H
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
 
 class Game
 {
     private:
-        int elements[9]={0,0,0,0,0,0,0,0,0};
+        int *element;
     public : 
-        void actualisationElements(int pos, char nomElement);
+        Game();
+        int getElement(int i) {return element[i];};
+        void actualisationElements(int pos, int elt);
         int isValidePostition(int pos);
         int partieFinie();
 };
